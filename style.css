@@ -1,0 +1,17 @@
+.navbar {
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(82, 91, 68);
+    padding: 15px;
+}
+
+.navbar a {
+    color: rgb(133, 169, 143);
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+.navbar a:hover {
+    color: rgb(90, 108, 87);
+}
