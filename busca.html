@@ -3,46 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resultado da Busca</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Loja Online - Busca e Pagamento</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-    <!-- Cabeçalho -->
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="produtos.html">Produtos</a></li>
-                <li><a href="pagamento.html">Formas de Pagamento</a></li>
-                <li><a href="contato.html">Contato</a></li>
-            </ul>
-        </nav>
+        <div class="logo">
+            <h1>Loja Online</h1>
+        </div>
+        <div class="busca">
+            <input type="text" id="busca-input" placeholder="Buscar produtos..." oninput="filtrarProdutos()">
+        </div>
     </header>
 
-    <!-- Conteúdo Principal -->
-    <main>
-        <h1>Resultados para sua busca</h1>
-        <section class="produtos">
-            <!-- Simulação de resultado da busca -->
-            <div class="produto">
-                <img src="assets/images/produto1.jpg" alt="Produto 1">
-                <p>Produto 1</p>
-                <p>R$ 100,00</p>
-            </div>
-            <div class="produto">
-                <img src="assets/images/produto2.jpg" alt="Produto 2">
-                <p>Produto 2</p>
-                <p>R$ 150,00</p>
-            </div>
-        </section>
-    </main>
+    <section class="produtos">
+        <h2>Produtos Disponíveis</h2>
+        <div id="produtos-lista" class="produtos-lista">
+            <!-- Produtos serão carregados aqui -->
+        </div>
+    </section>
 
-    <!-- Rodapé -->
-    <footer>
-        <p>&copy; 2024 GSlimaTec. Todos os direitos reservados.</p>
-        <p>Endereço: Rua Exemplo, 123, Cidade, Estado</p>
-    </footer>
+    <section class="carrinho">
+        <h2>Carrinho</h2>
+        <div id="carrinho-lista" class="carrinho-lista">
+            <!-- Itens no carrinho -->
+        </div>
+        <button id="finalizar-compra" class="btn" onclick="iniciarPagamento()">Finalizar Compra</button>
+    </section>
 
+    <!-- Formulário de pagamento do Stripe -->
+    <div id="pagamento-form" style="display:none;">
+        <h2>Pagamento</h2>
+        <form id="payment-form">
+            <div id="card-element"></div>
+            <button type="submit" id="submit">Pagar</button>
+        </form>
+    </div>
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
